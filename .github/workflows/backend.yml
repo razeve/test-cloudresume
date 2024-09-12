@@ -11,6 +11,8 @@ on:
       - 'lambda.tf'
       - 'cloudfront.tf'
       - 'requirements.txt'
+      - 'package.json'
+      - 'package-lock.json'
 
 jobs:
   test:
