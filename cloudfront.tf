@@ -8,7 +8,7 @@ resource "aws_cloudfront_origin_access_identity" "my_oai" {
   comment = "OAI for my S3 bucket"
 }
 
-# Define the CloudFront distribution
+# Define the CloudFront distributionnn
 resource "aws_cloudfront_distribution" "my_distribution" {
   origin {
     domain_name = aws_s3_bucket.myresumebucket.bucket_regional_domain_name
