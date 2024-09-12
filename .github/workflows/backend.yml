@@ -24,14 +24,16 @@ jobs:
         with:
           node-version: '20'  # Specify your Node.js version
 
+      - name: Install Dependencies
+        run: npm install
+
       - name: Install Cypress
         run: |
           npm install
           npm install cypress
 
       - name: Run Cypress tests
-        run: |
-          npx cypress run
+        run: npx cypress run
 
   deploy:
     needs: test
@@ -52,16 +54,13 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'us-east-2'  # Replace with your AWS region
-
+          aws-region: 'us-east-2'
+          
       - name: Terraform Init
-        run: |
-          terraform init
+        run: terraform init
 
       - name: Terraform Plan
-        run: |
-          terraform plan
+        run: terraform plan
 
       - name: Terraform Apply
-        run: |
-          terraform apply -auto-approve
+        run: terraform apply -auto-approve
