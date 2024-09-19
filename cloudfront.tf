@@ -3,7 +3,7 @@
 
 
 
-# Define the Origin Access Identity (OAI)
+# Define the Origin Access Identity (OAI) demo
 resource "aws_cloudfront_origin_access_identity" "my_oai" {
   comment = "OAI for my S3 bucket"
 }
