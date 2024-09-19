@@ -8,6 +8,9 @@ on:
       - Frontend/*
       - s3.tf
       - cloudfront.tf
+permissions:
+  id-token: write  # Required for OpenID Connect (OIDC)
+  contents: read   # Allows reading the repository contents
 
 jobs:
   deploy:
@@ -26,20 +29,13 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-2 # Replace with your AWS region
+       role-to-assume: arn:aws:iam::869935106172:role/github-to-aws-openid
+       aws-region: us-east-2
 
     - name: Sync S3 Bucket
       run: |
        aws s3 sync ./Frontend s3://test.razcloudresume.click --exclude ".git/*" --delete
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       
     - name: Invalidate CloudFront Cache
       run: |
         aws cloudfront create-invalidation --distribution-id E2TG1GB9EYGEIT --paths "/*"
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
