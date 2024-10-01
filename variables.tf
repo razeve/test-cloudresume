@@ -18,12 +18,14 @@ variable "domain_name" {
 variable "aws_dynamodb_table" {
     description = "This is table name in dynamodb"
     type = string
+    default = "count_table"
   
 }
 
 variable "hash_key" {
     description = "hash key name"
     type = string
+    default = "id"
   
 }
 
