@@ -27,7 +27,7 @@ resource "aws_cloudfront_distribution" "my_distribution" {
 
   default_cache_behavior {
     target_origin_id       = "S3-${aws_s3_bucket.myresumebucket.id}"
-    viewer_protocol_policy = "allow-all"
+    viewer_protocol_policy = "redirect-to-https"
 
     allowed_methods = ["GET", "HEAD"]
     cached_methods  = ["GET", "HEAD"]
