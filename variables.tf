@@ -30,5 +30,6 @@ variable "hash_key" {
 variable "api_gateway_name" {
     description = "This is api gateway name"
     type = string
+    default = "DynamoDBVisitCounterAPI"
   
 }
