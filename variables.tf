@@ -1,6 +1,7 @@
 variable "bucket_name" {
     description = "The name of the s3 bucket"
     type = string
+    default = "test.razcloudresume.click"
 }
 
 variable "region" {
@@ -12,6 +13,7 @@ variable "region" {
 variable "domain_name" {
     description = "this is the name of the doamin"
     type = string
+    default = "test.razcloudresume.clicklue"
   
 }
 
