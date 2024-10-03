@@ -22,7 +22,8 @@ resource "aws_cloudfront_distribution" "my_distribution" {
   enabled             = true
   default_root_object = "first.html"  
 
-  #personal note--needed to add the A record in route53 to retest
+  #personal note--needed to add the A record in route53 to retest again
+  
   aliases = ["test.razcloudresume.click"]
 
   default_cache_behavior {
