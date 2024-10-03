@@ -1,6 +1,6 @@
 provider "aws"{
     region= var.region
-    profile = "test"
+    profile = "test"   
    
    }
 terraform {
@@ -18,5 +18,7 @@ terraform {
     bucket  = "raz-terraform-state"
     key     = "terraform.tfstate"
     region  = "us-east-2"
+    
+     
   }
 }
