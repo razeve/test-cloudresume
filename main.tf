@@ -1,9 +1,8 @@
 provider "aws"{
-    region= var.region
-
-
-   
+    region= var.region  
+    profile="test"
    }
+
 terraform {
   required_providers {
     archive = {
