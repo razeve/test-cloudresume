@@ -3,7 +3,7 @@ by Forrest Brazeal
 
 The Cloud Resume Challenge is a project designed to help newcomers gain hands-on experience with key cloud technologies commonly used in the daily operations of DevOps Engineers. Forrest Brazeal provides high-level guidance for completing the challenge, encouraging self-learning through practical tasks. The challenge covers technologies like Frontend Development, HTTPS, DNS, APIs, Testing, Infrastructure as Code (IaC), and CI/CD pipelines.
 
-You can view my website at: test.razcloudresume.click
+You can view my website at: **test.razcloudresume.click**
 
 Though the challenge can be completed using different cloud platforms like Azure or GCP, my website is built using AWS services such as S3, CloudFront, Route 53, API Gateway, Lambda, and DynamoDB.
 
