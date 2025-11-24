@@ -1,7 +1,7 @@
-provider "aws"{
-    region= var.region  
-    profile="test"
-   }
+provider "aws" {
+  region  = var.region
+  profile = "test"
+}
 
 terraform {
   required_providers {
@@ -14,12 +14,12 @@ terraform {
       version = "~> 5.66.0"
     }
   }
-   backend "s3" {
-    bucket  = "raz-terraform-state"
-    key     = "terraform.tfstate"
-    region  = "us-east-2"
+  backend "s3" {
+    bucket = "raz-terraform-state"
+    key    = "terraform.tfstate"
+    region = "us-east-2"
 
-    
-     
+
+
   }
 }

@@ -49,10 +49,10 @@ resource "aws_api_gateway_integration_response" "integration_response" {
   status_code = aws_api_gateway_method_response.method_response.status_code
 
   response_parameters = {
-    "method.response.header.Access-Control-Allow-Origin" = "'*'"    
+    "method.response.header.Access-Control-Allow-Origin" = "'*'"
 
   }
-   depends_on = [aws_api_gateway_integration.lambda_integration]
+  depends_on = [aws_api_gateway_integration.lambda_integration]
 }
 
 # Adding the OPTIONS Method for CORS
@@ -82,7 +82,7 @@ resource "aws_api_gateway_method_response" "options_method_response" {
   status_code = "200"
 
   response_parameters = {
-    "method.response.header.Access-Control-Allow-Origin" = true
+    "method.response.header.Access-Control-Allow-Origin"  = true
     "method.response.header.Access-Control-Allow-Headers" = true
     "method.response.header.Access-Control-Allow-Methods" = true
   }
@@ -99,7 +99,7 @@ resource "aws_api_gateway_integration_response" "options_integration_response" {
     "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
     "method.response.header.Access-Control-Allow-Methods" = "'OPTIONS,POST'"
   }
-    depends_on = [aws_api_gateway_integration.options_integration]
+  depends_on = [aws_api_gateway_integration.options_integration]
 
 }
 

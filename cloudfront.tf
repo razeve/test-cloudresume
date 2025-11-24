@@ -20,7 +20,7 @@ resource "aws_cloudfront_distribution" "my_distribution" {
   }
 
   enabled             = true
-  default_root_object = "first.html"  
+  default_root_object = "first.html"
 
   #personal note--needed to add the A record in route53 
 
@@ -39,18 +39,18 @@ resource "aws_cloudfront_distribution" "my_distribution" {
         forward = "none"
       }
     }
-    
-    min_ttl                = 0
-    default_ttl            = 3600
-    max_ttl                = 86400
+
+    min_ttl     = 0
+    default_ttl = 3600
+    max_ttl     = 86400
   }
 
-  price_class = "PriceClass_All"  
+  price_class = "PriceClass_All"
   viewer_certificate {
-    acm_certificate_arn            = "arn:aws:acm:us-east-1:869935106172:certificate/dba625c0-f8ec-4082-abfc-cf0429855dd5"  
-    ssl_support_method             = "sni-only"
+    acm_certificate_arn      = "arn:aws:acm:us-east-1:869935106172:certificate/dba625c0-f8ec-4082-abfc-cf0429855dd5"
+    ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2021"
-    
+
   }
 
   restrictions {
@@ -60,4 +60,4 @@ resource "aws_cloudfront_distribution" "my_distribution" {
   }
 }
 
-  
+
