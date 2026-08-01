@@ -74,5 +74,5 @@ resource "aws_s3_object" "scripts_js" {
   source       = "${path.module}/Frontend/script.js"
   etag         = filemd5("${path.module}/Frontend/script.js")
   content_type = "application/javascript"
-  #depends_on   = [aws_lambda_function] making chnagesssss
+  #depends_on   = [aws_lambda_function] making changess
 }
